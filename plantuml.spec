@@ -1,6 +1,6 @@
 Name:           plantuml
 Version:        7951
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Program to generate UML diagram from a text description
 
 License:        LGPLv3+
@@ -65,6 +65,9 @@ cp -rp javadoc/* $RPM_BUILD_ROOT%{_javadocdir}/%{name}
 %{_javadocdir}/%{name}
 
 %changelog
+* Thu Feb 14 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 7951-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
+
 * Tue Jan 22 2013 Jan Safranek <jsafrane@redhat.com> - 7951-1
 - Update to ver. 7951
 - Added README and COPYING
