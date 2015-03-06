@@ -1,5 +1,5 @@
 Name:           plantuml
-Version:        7978
+Version:        8020
 Release:        1%{?dist}
 Summary:        Program to generate UML diagram from a text description
 
@@ -65,6 +65,9 @@ cp -rp javadoc/* $RPM_BUILD_ROOT%{_javadocdir}/%{name}
 %{_javadocdir}/%{name}
 
 %changelog
+* Fri Mar  6 2015 Jan Safranek <jsafrane@redhat.com> - 8020-1
+- Update to ver. 8020
+
 * Thu Aug 29 2013 Jan Safranek <jsafrane@redhat.com> - 7978-1
 - Update to ver. 7978
 
