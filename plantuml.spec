@@ -14,7 +14,7 @@ BuildRequires:  java-devel
 BuildRequires:  ant
 
 Requires:       jpackage-utils
-Requires:       java
+Requires:       java-headless
 
 %description
 PlantUML is a program allowing to draw UML diagrams, using a simple
