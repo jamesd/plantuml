@@ -1,6 +1,6 @@
 Name:           plantuml
 Version:        8020
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Program to generate UML diagram from a text description
 
 License:        LGPLv3+
@@ -65,6 +65,9 @@ cp -rp javadoc/* $RPM_BUILD_ROOT%{_javadocdir}/%{name}
 %{_javadocdir}/%{name}
 
 %changelog
+* Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 8020-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
+
 * Fri Mar  6 2015 Jan Safranek <jsafrane@redhat.com> - 8020-1
 - Update to ver. 8020
 
