@@ -1,6 +1,6 @@
 Name:           plantuml
-Version:        8020
-Release:        2%{?dist}
+Version:        8027
+Release:        1%{?dist}
 Summary:        Program to generate UML diagram from a text description
 
 License:        LGPLv3+
@@ -15,6 +15,8 @@ BuildRequires:  ant
 
 Requires:       jpackage-utils
 Requires:       java-headless
+
+Patch1:         plantuml-doc-errors.patch
 
 %description
 PlantUML is a program allowing to draw UML diagrams, using a simple
@@ -40,6 +42,7 @@ This package contains the API documentation for %{name}.
 
 %prep
 %setup -q -c -n plantuml
+%patch1 -p1 -b .doc-errors
 
 %build
 ant
@@ -65,6 +68,9 @@ cp -rp javadoc/* $RPM_BUILD_ROOT%{_javadocdir}/%{name}
 %{_javadocdir}/%{name}
 
 %changelog
+* Mon Jun 22 2015 Jan Safranek <jsafrane@redhat.com> - 8027-1
+- Update to ver. 8027
+
 * Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 8020-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
 

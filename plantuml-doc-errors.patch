@@ -1,0 +1,21 @@
+Fix compilation under openjdk 1.8.0_60.
+
+diff -up plantuml/src/net/sourceforge/plantuml/AnimatedGifEncoder.java.old plantuml/src/net/sourceforge/plantuml/AnimatedGifEncoder.java
+--- plantuml/src/net/sourceforge/plantuml/AnimatedGifEncoder.java.old	2015-06-22 09:50:44.050253313 +0200
++++ plantuml/src/net/sourceforge/plantuml/AnimatedGifEncoder.java	2015-06-22 09:51:08.031355587 +0200
+@@ -136,7 +136,6 @@ public class AnimatedGifEncoder {
+ 	 * 
+ 	 * @param iter
+ 	 *            int number of iterations.
+-	 * @return
+ 	 */
+ 	public void setRepeat(int iter) {
+ 		if (iter >= 0) {
+@@ -258,7 +257,6 @@ public class AnimatedGifEncoder {
+ 	 * 
+ 	 * @param quality
+ 	 *            int greater than 0.
+-	 * @return
+ 	 */
+ 	public void setQuality(int quality) {
+ 		if (quality < 1)
