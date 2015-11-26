@@ -1,6 +1,6 @@
 Name:           plantuml
 Version:        8033
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Program to generate UML diagram from a text description
 
 License:        LGPLv3+
@@ -45,7 +45,7 @@ rm README.orig
 ant
 
 # build javadoc
-javadoc -encoding UTF-8 -Xdoclint:none -d javadoc -sourcepath src net.sourceforge.plantuml
+%javadoc -encoding UTF-8 -Xdoclint:none -classpath %{name}.jar -d javadoc $(find src -name "*.java") -windowtitle "PlantUML %{version}"
 
 %install
 # Set jar location
@@ -65,6 +65,9 @@ javadoc -encoding UTF-8 -Xdoclint:none -d javadoc -sourcepath src net.sourceforg
 %license COPYING
 
 %changelog
+* Thu Nov 26 2015 gil cattaneo <puntogil@libero.it> 8033-3
+- edited javadoc task
+
 * Thu Nov 26 2015 gil cattaneo <puntogil@libero.it> 8033-2
 - fix README line ending
 
