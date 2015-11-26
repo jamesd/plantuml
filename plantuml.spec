@@ -1,6 +1,6 @@
 Name:           plantuml
 Version:        8033
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Program to generate UML diagram from a text description
 
 License:        LGPLv3+
@@ -27,13 +27,18 @@ PlantUML supports the following diagram types
   - state diagram
 
 %package javadoc
-Summary:       Javadoc for %{name}
+Summary:        Javadoc for %{name}
 
 %description javadoc
 This package contains the API documentation for %{name}.
 
 %prep
 %setup -q -c -n plantuml
+
+# Convert from dos to unix line ending
+sed -i.orig 's|\r||g' README
+touch -r README.orig README
+rm README.orig
 
 %build
 
@@ -60,6 +65,9 @@ javadoc -encoding UTF-8 -Xdoclint:none -d javadoc -sourcepath src net.sourceforg
 %license COPYING
 
 %changelog
+* Thu Nov 26 2015 gil cattaneo <puntogil@libero.it> 8033-2
+- fix README line ending
+
 * Thu Nov 26 2015 gil cattaneo <puntogil@libero.it> 8033-1
 - update to 8033
 - minor changes to adapt to current guideline
