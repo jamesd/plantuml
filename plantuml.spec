@@ -1,6 +1,6 @@
 Name:           plantuml
 Version:        8033
-Release:        8%{?dist}
+Release:        9%{?dist}
 Summary:        Program to generate UML diagram from a text description
 
 License:        LGPLv3+
@@ -11,6 +11,9 @@ BuildArch:      noarch
 
 BuildRequires:  ant
 BuildRequires:  javapackages-local
+# Explicit requires for javapackages-tools since plantuml script
+# uses /usr/share/java-utils/java-functions
+Requires:       javapackages-tools
 
 %description
 PlantUML is a program allowing to draw UML diagrams, using a simple
@@ -65,6 +68,10 @@ ant
 %license COPYING
 
 %changelog
+* Fri Aug 31 2018 Severin Gehwolf <sgehwolf@redhat.com> - 8033-9
+- Add explicit requirement for javapackages-tools for plantuml script.
+  See RHBZ#1600426.
+
 * Fri Jul 13 2018 Fedora Release Engineering <releng@fedoraproject.org> - 8033-8
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
 
