@@ -1,6 +1,6 @@
 Name:           plantuml
 Version:        8033
-Release:        9%{?dist}
+Release:        10%{?dist}
 Summary:        Program to generate UML diagram from a text description
 
 License:        LGPLv3+
@@ -68,6 +68,9 @@ ant
 %license COPYING
 
 %changelog
+* Sat Feb 02 2019 Fedora Release Engineering <releng@fedoraproject.org> - 8033-10
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
+
 * Fri Aug 31 2018 Severin Gehwolf <sgehwolf@redhat.com> - 8033-9
 - Add explicit requirement for javapackages-tools for plantuml script.
   See RHBZ#1600426.
