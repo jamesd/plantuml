@@ -69,7 +69,7 @@ ant
 %license COPYING
 
 %changelog
-* Mon Feb 13 2019 Jan Safranek <jsafrane@redhat.com> - 1.2019.1-1
+* Wed Feb 13 2019 Jan Safranek <jsafrane@redhat.com> - 1.2019.1-1
 - Update to 1.2019.1
 - Introduce Epoch, upstream versioning schema changed.
 
