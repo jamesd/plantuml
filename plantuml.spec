@@ -1,12 +1,13 @@
 Name:           plantuml
-Version:        1.2019.1
-Release:        6%{?dist}
+Version:        1.2021.0
+Release:        1%{?dist}
 Epoch:          1
 Summary:        Program to generate UML diagram from a text description
 
 License:        LGPLv3+
 URL:            http://plantuml.com/
 Source0:        http://downloads.sourceforge.net/plantuml/%{name}-lgpl-%{version}.tar.gz
+Patch0:         remove-non-ascii-char.patch
 
 BuildArch:      noarch
 
@@ -38,6 +39,7 @@ This package contains the API documentation for %{name}.
 
 %prep
 %setup -q -c -n plantuml
+%patch0 -p1
 
 # Convert from dos to unix line ending
 sed -i.orig 's|\r||g' README
@@ -69,6 +71,9 @@ export CLASSPATH=$(build-classpath ant):plantuml.jar
 %license COPYING
 
 %changelog
+* Wed Jan 20 2021 James Davidson <james@greycastle.net> - 1:1.2021.0-1
+- Update to 1.2021.0
+
 * Tue Jul 28 2020 Fedora Release Engineering <releng@fedoraproject.org> - 1:1.2019.1-6
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
 
